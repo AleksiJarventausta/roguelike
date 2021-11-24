@@ -57,14 +57,19 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Look X", lookDirection.x);
         animator.SetFloat("Look Y", lookDirection.y);
         animator.SetFloat("Speed", move.magnitude);
-        animator.SetBool("Mirror Idle",lookDirection.x < 0);
 
         UpdateWeaponRender();
-        
 
         if(Input.GetKeyDown(KeyCode.Mouse1)) {
             Launch();
         }
+    }
+
+    public void AddWeapon(GameObject weapon)
+    {
+        Weapon = weapon;
+        Destroy(usedWeapon);
+        usedWeapon = Instantiate(Weapon, rigidbody2d.position, Quaternion.identity);
     }
 
     float Angle(Vector2 p_vector2)

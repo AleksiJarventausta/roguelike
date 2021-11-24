@@ -7,8 +7,12 @@ public class Projectile : MonoBehaviour
     Rigidbody2D rigidbody2d;
     SpriteRenderer spriteRenderer;
 
+    public float speed;
     public float duration = 3.0f;
-    public float currentDuration;
+    float currentDuration;
+    public float spinningSpeed = 0;
+    bool rotateClockwise = true;
+
 
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -45,14 +49,21 @@ public class Projectile : MonoBehaviour
         }
 
     }
+    void FixedUpdate()
+    {
+        if (spinningSpeed > 0) {
+            transform.Rotate(0,0, rotateClockwise? spinningSpeed: -spinningSpeed);
+        }
+    }
     public void Launch(Vector2 direction, float force)
     {
        rigidbody2d.AddForce(direction*force);
        float angle = Angle(direction);
        if (angle > 0) {
            spriteRenderer.flipY = true;
+           rotateClockwise = false;
        }
-       transform.rotation = Quaternion.Euler(0, 0, -90 - Angle(direction) );
+       transform.rotation = Quaternion.Euler(0, 0, -90 - angle);
 
     }
     float Angle(Vector2 p_vector2)
