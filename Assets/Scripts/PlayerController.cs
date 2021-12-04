@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     GameObject usedWeapon;
     AudioSource audioSource;
 
+    WeaponController weaponController;
+
     public void PlaySound(AudioClip clip)
     {
         audioSource.PlayOneShot(clip);
@@ -35,6 +37,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         usedWeapon = Instantiate(Weapon, rigidbody2d.position, Quaternion.identity);
+        weaponController = usedWeapon.GetComponent<WeaponController>();
         currentHealth = maxHealth;
     }
 
@@ -58,10 +61,16 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Look Y", lookDirection.y);
         animator.SetFloat("Speed", move.magnitude);
 
-        UpdateWeaponRender();
+        if (weaponController != null)
+        {
+        weaponController.UpdateWeaponRender(rigidbody2d.position, lookDirection);
+        }
 
-        if(Input.GetKeyDown(KeyCode.Mouse1)) {
+        if(Input.GetKeyDown(KeyCode.Mouse0)) {
             Launch();
+        }
+        else if(Input.GetKeyDown(KeyCode.Mouse1)) {
+            Throw();
         }
     }
 
@@ -70,6 +79,7 @@ public class PlayerController : MonoBehaviour
         Weapon = weapon;
         Destroy(usedWeapon);
         usedWeapon = Instantiate(Weapon, rigidbody2d.position, Quaternion.identity);
+        weaponController = usedWeapon.GetComponent<WeaponController>();
     }
 
     float Angle(Vector2 p_vector2)
@@ -124,9 +134,17 @@ public class PlayerController : MonoBehaviour
     {
 
         WeaponController weaponController = usedWeapon.GetComponent<WeaponController>();
-        weaponController.Launch(lookDirection.normalized, rigidbody2d.position);
+        weaponController.Attack(lookDirection.normalized, rigidbody2d.position);
         PlaySound(weaponController.launchClip);
 
-        animator.SetTrigger("Launch");
+    }
+    //TODO: sound clip
+    public void Throw()
+    {
+
+        WeaponController weaponController = usedWeapon.GetComponent<WeaponController>();
+        PlaySound(weaponController.launchClip);
+        weaponController.Throw(lookDirection.normalized, rigidbody2d.position);
+
     }
 }

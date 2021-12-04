@@ -107,7 +107,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!82 &2113543587
 AudioSource:
   m_ObjectHideFlags: 0
@@ -238,7 +238,7 @@ MonoBehaviour:
   movementSpeed: 3
   maxHealth: 5
   timeInvincible: 2
-  Weapon: {fileID: 4085232677432542298, guid: 6ac142fc89566c3f7a36d8fa0bb37457, type: 3}
+  Weapon: {fileID: 1250003458305707931, guid: 8dfb84efeb81bdc5dbca83866166b5ab, type: 3}
 --- !u!61 &8595649119876072559
 BoxCollider2D:
   m_ObjectHideFlags: 0

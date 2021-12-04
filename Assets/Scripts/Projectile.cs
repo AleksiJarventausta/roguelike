@@ -9,6 +9,10 @@ public class Projectile : MonoBehaviour
 
     public float speed;
     public float duration = 3.0f;
+    public float damage;
+    public float knockback;
+    public float knockbackTime;
+
     float currentDuration;
     public float spinningSpeed = 0;
     bool rotateClockwise = true;
@@ -17,13 +21,11 @@ public class Projectile : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other)
     {
 
-        /*
-        EnemyController e = other.collider.GetComponent<EnemyController>();
+        EnemyAI e = other.collider.GetComponent<EnemyAI>();
         if (e != null)
         {
-            Debug.Log("Hit enemy");
+            e.Damage(damage, rigidbody2d.position, knockback, knockbackTime);
         }
-        */
 
         Destroy(gameObject);
     }
@@ -57,7 +59,7 @@ public class Projectile : MonoBehaviour
     }
     public void Launch(Vector2 direction, float force)
     {
-       rigidbody2d.AddForce(direction*force);
+       rigidbody2d.AddForce(direction * speed);
        float angle = Angle(direction);
        if (angle > 0) {
            spriteRenderer.flipY = true;

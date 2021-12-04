@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="480"
+   height="480"
+   viewBox="0 0 126.9984 126.9984"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   sodipodi:docname="tiles.svg"
+   inkscape:export-filename="/home/aksu-lut/games/roguelike/Assets/Art/tiles.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="true"
+     units="px"
+     width="480px"
+     inkscape:snap-nodes="false"
+     inkscape:object-nodes="false"
+     inkscape:zoom="2.8924636"
+     inkscape:cx="158.68825"
+     inkscape:cy="200.00252"
+     inkscape:window-width="2560"
+     inkscape:window-height="1375"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     scale-x="0.16458">
+    <inkscape:grid
+       type="xygrid"
+       id="grid9"
+       spacingx="21.166667"
+       spacingy="21.166667"
+       color="#ca3f19"
+       opacity="1"
+       visible="true"
+       empspacing="6" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2">
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect10794"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect10757"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect10716"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect10338"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="skeletal"
+       id="path-effect10330"
+       is_visible="true"
+       lpeversion="1"
+       pattern="M 0,4.9921384 C 0,2.236478 2.236478,0 4.9921384,0 c 2.7556603,0 4.9921383,2.236478 4.9921383,4.9921384 0,2.7556603 -2.236478,4.9921383 -4.9921383,4.9921383 C 2.236478,9.9842767 0,7.7477987 0,4.9921384 Z"
+       copytype="single_stretched"
+       prop_scale="1"
+       scale_y_rel="false"
+       spacing="0"
+       normal_offset="0"
+       tang_offset="0"
+       prop_units="false"
+       vertical_pattern="false"
+       hide_knot="false"
+       fuse_tolerance="0" />
+    <inkscape:path-effect
+       effect="skeletal"
+       id="path-effect10324"
+       is_visible="true"
+       lpeversion="1"
+       pattern="M 0,4.9921384 C 0,2.236478 2.236478,0 4.9921384,0 c 2.7556603,0 4.9921383,2.236478 4.9921383,4.9921384 0,2.7556603 -2.236478,4.9921383 -4.9921383,4.9921383 C 2.236478,9.9842767 0,7.7477987 0,4.9921384 Z"
+       copytype="single_stretched"
+       prop_scale="1"
+       scale_y_rel="false"
+       spacing="0"
+       normal_offset="0"
+       tang_offset="0"
+       prop_units="false"
+       vertical_pattern="false"
+       hide_knot="false"
+       fuse_tolerance="0" />
+    <inkscape:path-effect
+       effect="powerstroke"
+       id="path-effect10318"
+       is_visible="true"
+       lpeversion="1"
+       offset_points="0,4.99214"
+       not_jump="false"
+       sort_points="true"
+       interpolator_type="CubicBezierJohan"
+       interpolator_beta="0.2"
+       start_linecap_type="zerowidth"
+       linejoin_type="extrp_arc"
+       miter_limit="4"
+       scale_width="1"
+       end_linecap_type="zerowidth" />
+    <inkscape:path-effect
+       effect="powerstroke"
+       id="path-effect10312"
+       is_visible="true"
+       lpeversion="1"
+       offset_points="0,4.99214"
+       not_jump="false"
+       sort_points="true"
+       interpolator_type="CubicBezierJohan"
+       interpolator_beta="0.2"
+       start_linecap_type="zerowidth"
+       linejoin_type="extrp_arc"
+       miter_limit="4"
+       scale_width="1"
+       end_linecap_type="zerowidth" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect6035"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect788"
+       is_visible="true"
+       lpeversion="1" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline"
+     units="px">
+    <rect
+       style="fill:#00ff00;stroke-width:0.264583"
+       id="rect419"
+       width="84.667"
+       height="84.666664"
+       x="0"
+       y="0" />
+    <rect
+       style="fill:#00ff00;stroke-width:0.264583"
+       id="rect520"
+       width="21.166666"
+       height="21.166666"
+       x="21.166666"
+       y="0" />
+    <circle
+       style="fill:#00ff00;stroke-width:0.264583"
+       id="path544"
+       cx="31.75"
+       cy="10.583333"
+       r="10.583333" />
+    <rect
+       style="fill:#ff7f2a;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect11109"
+       width="21.166666"
+       height="21.166666"
+       x="0"
+       y="0" />
+    <rect
+       style="fill:#ff00ff;fill-rule:evenodd;stroke-width:0.264583"
+       id="rect43"
+       width="21.166666"
+       height="21.166666"
+       x="42.333332"
+       y="0" />
+    <rect
+       style="fill:#2b0000;stroke-width:0.264583"
+       id="rect67"
+       width="21.166666"
+       height="21.166666"
+       x="63.5"
+       y="0" />
+    <rect
+       style="fill:#c83737;stroke-width:0.264583"
+       id="rect91"
+       width="21.166666"
+       height="21.166666"
+       x="0"
+       y="21.166666" />
+    <rect
+       style="fill:#000080;stroke-width:0.264583"
+       id="rect115"
+       width="21.166666"
+       height="21.166666"
+       x="21.166666"
+       y="21.166666" />
+    <rect
+       style="fill:#ffe680;stroke-width:0.264583"
+       id="rect139"
+       width="21.166666"
+       height="21.166666"
+       x="42.333332"
+       y="21.166666" />
+    <rect
+       style="fill:#800080;stroke-width:0.264583"
+       id="rect163"
+       width="21.166666"
+       height="21.166666"
+       x="63.5"
+       y="21.166666" />
+    <rect
+       style="fill:#666666;stroke-width:0.264583"
+       id="rect187"
+       width="21.166666"
+       height="21.166666"
+       x="0"
+       y="42.333332"
+       inkscape:export-filename="/home/aksu-lut/games/roguelike/Assets/Art/Tiles.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#808080;stroke-width:0.264583"
+       id="rect259"
+       width="63.5"
+       height="42.333332"
+       x="0"
+       y="0" />
+    <rect
+       style="fill:#000000;stroke-width:0.264583"
+       id="rect355"
+       width="63.5"
+       height="4"
+       x="0"
+       y="0" />
+    <rect
+       style="fill:#808080;stroke-width:0.264583"
+       id="rect359"
+       width="63.5"
+       height="21.166666"
+       x="0"
+       y="42.333332" />
+    <rect
+       style="fill:#000000;stroke-width:0.264583"
+       id="rect427"
+       width="4"
+       height="63.5"
+       x="0"
+       y="0"
+       units="px" />
+    <rect
+       style="fill:#000000;stroke-width:0.24089"
+       id="rect429"
+       width="63.5"
+       height="4"
+       x="0"
+       y="59.5" />
+    <rect
+       style="fill:#000000;stroke-width:0.264583"
+       id="rect431"
+       width="4"
+       height="63.5"
+       x="59.5"
+       y="0" />
+    <rect
+       style="fill:#808080;stroke-width:0.264583"
+       id="rect489"
+       width="42.333332"
+       height="42.333332"
+       x="0"
+       y="63.5" />
+    <rect
+       style="fill:#000000;stroke-width:0.264583"
+       id="rect557"
+       width="8"
+       height="8"
+       x="17.166666"
+       y="80.666666" />
+  </g>
+</svg>
