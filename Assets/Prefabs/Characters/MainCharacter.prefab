@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f776e2e9690501e41a2e5b81ceb440b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 211b83409a26bfa11b96ce24c5b3f1c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 3
+  movementSpeed: 5
   maxHealth: 5
   timeInvincible: 2
   Weapon: {fileID: 1250003458305707931, guid: 8dfb84efeb81bdc5dbca83866166b5ab, type: 3}

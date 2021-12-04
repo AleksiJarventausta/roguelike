@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300018, guid: 0430600dfe1dcf246b1f1324fe8be4d4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -146,8 +146,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2171b020e5a0e4ef1b3532e90976f74c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 0}
+  targetPosition: {fileID: 7821069075617778099, guid: 2b996b77b3ee7f43684243530ef409ec, type: 3}
   speed: 2
+  damageRange: 2
+  damage: 0
+  damageTime: 0
   nextWaypointDistance: 3
   repathRate: 0.5
   reachedEndOfPath: 0
@@ -168,7 +171,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.75}
+  m_Offset: {x: 0.012354493, y: 0.44937515}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -179,7 +182,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4, y: 1.5}
+  m_Size: {x: 0.6340239, y: 0.51988053}
   m_EdgeRadius: 0
 --- !u!50 &3944448205813394318
 Rigidbody2D:

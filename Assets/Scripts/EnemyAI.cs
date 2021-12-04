@@ -13,6 +13,11 @@ public class EnemyAI : MonoBehaviour
     public Path path;
 
     public float speed = 2;
+    public float damageRange;
+    public float damage;
+    public float damageTime;
+    private float damageTimer = 0.0f;
+    private bool damaging;
 
     public float nextWaypointDistance = 3;
 
@@ -37,7 +42,7 @@ public class EnemyAI : MonoBehaviour
     EnemyState enemyState = EnemyState.IDLE;
     // Start is called before the first frame update
 
-    public void Start () {
+    public void Awake() {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
@@ -63,12 +68,32 @@ public class EnemyAI : MonoBehaviour
         rb.velocity = direction*speedFactor*speed;
     }
 
+    public void CheckDamage()
+    {
+        float distance = Vector3.Distance(transform.position, targetPosition.position);
+        if (distance < damageRange)
+        {
+            Debug.Log("damaging");
+        }
+
+    }
+
     public void FixedUpdate () {
-        if (Time.time > lastRepath + repathRate && seeker.IsDone()) {
+        if (Time.time > lastRepath + repathRate && seeker.IsDone() && targetPosition != null) {
             lastRepath = Time.time;
 
             seeker.StartPath(transform.position, targetPosition.position, OnPathComplete);
         }
+        if (enemyState == EnemyState.IDLE)
+        {
+            SeePlayer(seeRadius);
+        } else if (enemyState == EnemyState.CHASING) {
+            SeePlayer(loseRadius);
+        }
+
+        CheckDamage();
+
+
 
         if (path == null || !canMove) {
             return;
@@ -105,6 +130,7 @@ public class EnemyAI : MonoBehaviour
             PlayerController controller = hit.GetComponent<PlayerController>();
             if (controller != null)
             {
+                Debug.Log("Found player");
                 if (enemyState == EnemyState.IDLE){
                     targetPosition = controller.transform;
                     enemyState = EnemyState.CHASING;
