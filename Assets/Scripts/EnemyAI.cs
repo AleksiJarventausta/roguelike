@@ -24,6 +24,7 @@ public class EnemyAI : MonoBehaviour
     public float damagePointMultiplier;
     public float killPoints;
     private float damageTimer = 0.0f;
+    Animator animator;
 
     public int level = 0;
     
@@ -61,6 +62,7 @@ public class EnemyAI : MonoBehaviour
         gc = GameController.instance;
         // If you are writing a 2D game you can remove this line
         // and use the alternative way to move sugggested further below.
+        animator = GetComponent<Animator>();
         controller = GetComponent<EnemyController>();
     }
 
@@ -79,6 +81,8 @@ public class EnemyAI : MonoBehaviour
     public void Move(Vector2 direction, float speedFactor)
     {
         rb.velocity = direction*(speedFactor*speed + speedFactor*speed*speedScaling*level);
+        animator.SetFloat("Look X", direction.normalized.x);
+        animator.SetFloat("Look Y", direction.normalized.y);
     }
 
     void OnTriggerStay2D(Collider2D other)

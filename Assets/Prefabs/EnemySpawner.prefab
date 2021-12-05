@@ -46,10 +46,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 3944448205813394361, guid: 13df6ec5795c313e08c0b36b09c0929f, type: 3}
+  - {fileID: 2352030720892782115, guid: 2fb9f2bbe01984902b2340fc225b0b11, type: 3}
+  - {fileID: 1490536559736280911, guid: 91318424ffac3c15e8e264eab97d107f, type: 3}
   collectablePrefabs:
   - {fileID: 367177898214147531, guid: a29a37cc1e4d5e78ba0d378e6a20f75d, type: 3}
+  - {fileID: 367177898214147531, guid: 4def430fa7306a1b2b7ca651f5c4c728, type: 3}
   MaxEnemies: 8
-  dropRate: 1
+  dropRate: 0.3
   dropRateScaling: 0
   maxCollectables: 2
   growMaxCollectableLevel: 5

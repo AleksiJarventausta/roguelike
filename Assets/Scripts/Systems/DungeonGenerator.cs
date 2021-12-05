@@ -1,4 +1,5 @@
-
+//https://github.com/NagaChiang/unity-ecs-bsp-dungeon-generation
+//used as a base for this generator.
 using System;
 using System.Collections;
 using System.Collections.Generic;
