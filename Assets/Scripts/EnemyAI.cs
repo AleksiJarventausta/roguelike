@@ -34,6 +34,8 @@ public class EnemyAI : MonoBehaviour
     public float pointScaling;
     private float nextWaypointDistance = 3;
 
+    public AudioClip hit;
+
     private int currentWaypoint = 0;
 
     private float repathRate = 0.5f;
@@ -90,7 +92,6 @@ public class EnemyAI : MonoBehaviour
         PlayerController pc = other.GetComponent<PlayerController>();
         if (pc != null)
         {
-            Debug.Log("Hitting Player");
             if(damaging)
             {
                 if(canMove)
@@ -195,6 +196,7 @@ public class EnemyAI : MonoBehaviour
         //TODO animation.
         currentHealth -= damage;
         PlayerController pc = targetPosition.GetComponent<PlayerController>();
+        
         gc.SetPoints(damage * damagePointMultiplier + damage*damagePointMultiplier*pointScaling*level);
         if(currentHealth <= 0)
         {
@@ -202,6 +204,7 @@ public class EnemyAI : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        pc.PlaySound(hit);
         StartCoroutine(HandleKnockback(position, knockback, knocbackTime));
     }
 

@@ -51,6 +51,8 @@ MonoBehaviour:
   collectablePrefabs:
   - {fileID: 367177898214147531, guid: a29a37cc1e4d5e78ba0d378e6a20f75d, type: 3}
   - {fileID: 367177898214147531, guid: 4def430fa7306a1b2b7ca651f5c4c728, type: 3}
+  - {fileID: 367177898214147531, guid: 806f38005025b25f6b9c9b0feca6ffcc, type: 3}
+  - {fileID: 367177898214147531, guid: 51983594d0f2f96b085f18307edec4f3, type: 3}
   MaxEnemies: 8
   dropRate: 0.3
   dropRateScaling: 0

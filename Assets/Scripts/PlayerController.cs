@@ -21,6 +21,9 @@ public class PlayerController : MonoBehaviour
     Vector2 moveDirection = new Vector2(1,0);
     Vector2 lookDirection = new Vector2(1,0);
 
+    public AudioClip[] damageClips;
+    public AudioClip deadClip;
+
     Rigidbody2D rigidbody2d;
     float horizontal;
     float vertical;
@@ -152,13 +155,18 @@ public class PlayerController : MonoBehaviour
 
     public void Damage(float damage)
     {
+        if (!isAlive)
+            return;
         currentHealth -= damage;
         HUDController.instance.SetHealth(currentHealth / maxHealth);
         if (currentHealth <= 0)
         {
             isAlive = false;
             gc.PlayerDied();
+            PlaySound(deadClip);
+
         }
+        PlaySound(damageClips[Random.Range(0, damageClips.Length)]);
     }
 
     public void Launch()

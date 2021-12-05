@@ -54,7 +54,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Enemy2
+  m_Name: Enemy3
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Look X
@@ -91,7 +91,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 9dd04e8b8fe1bd507bbaebe807cccf6f, type: 2}
+    m_Motion: {fileID: 7400000, guid: 16bfa6b8f8c0e0236a7e55f950173f0a, type: 2}
     m_Threshold: 0
     m_Position: {x: 1, y: 0}
     m_TimeScale: 1
@@ -99,7 +99,7 @@ BlendTree:
     m_DirectBlendParameter: Look X
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 27c180940dd460231ab8d284d19fda6a, type: 2}
+    m_Motion: {fileID: 7400000, guid: ea5d4d0ae0e66485f8a69814eb66b0ad, type: 2}
     m_Threshold: 0.33333334
     m_Position: {x: 0, y: 1}
     m_TimeScale: 1
@@ -107,7 +107,7 @@ BlendTree:
     m_DirectBlendParameter: Look X
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 17790119bbe57770fa321f20c1caa5da, type: 2}
+    m_Motion: {fileID: 7400000, guid: 8bb814548bbf00eb3b389e1e5d4bf32c, type: 2}
     m_Threshold: 0.6666667
     m_Position: {x: -1, y: 0}
     m_TimeScale: 1
@@ -115,7 +115,7 @@ BlendTree:
     m_DirectBlendParameter: Look X
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 630a4698ead5899b0a19ede8ce571c5e, type: 2}
+    m_Motion: {fileID: 7400000, guid: 683df5a5f7d3181f0995e1bed55f3b40, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: -1}
     m_TimeScale: 1

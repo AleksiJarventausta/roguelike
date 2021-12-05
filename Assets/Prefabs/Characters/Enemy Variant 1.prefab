@@ -9,8 +9,40 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2352030720892782115, guid: 2fb9f2bbe01984902b2340fc225b0b11, type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: Enemy Variant 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2352030720892782122, guid: 2fb9f2bbe01984902b2340fc225b0b11, type: 3}
+      propertyPath: speed
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352030720892782122, guid: 2fb9f2bbe01984902b2340fc225b0b11, type: 3}
+      propertyPath: damage
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352030720892782122, guid: 2fb9f2bbe01984902b2340fc225b0b11, type: 3}
+      propertyPath: maxHealth
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352030720892782122, guid: 2fb9f2bbe01984902b2340fc225b0b11, type: 3}
+      propertyPath: killPoints
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352030720892782122, guid: 2fb9f2bbe01984902b2340fc225b0b11, type: 3}
+      propertyPath: damageRange
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352030720892782122, guid: 2fb9f2bbe01984902b2340fc225b0b11, type: 3}
+      propertyPath: damageScaling
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352030720892782122, guid: 2fb9f2bbe01984902b2340fc225b0b11, type: 3}
+      propertyPath: maxHealthScaling
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352030720892782124, guid: 2fb9f2bbe01984902b2340fc225b0b11, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 4f1a47cda629927b2994cfdb5c6f34c3, type: 2}
     - target: {fileID: 2352030720892782125, guid: 2fb9f2bbe01984902b2340fc225b0b11, type: 3}
       propertyPath: m_Sprite
       value: 

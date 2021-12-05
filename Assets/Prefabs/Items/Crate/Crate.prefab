@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 348494445482044922}
   - component: {fileID: 6599399720075748714}
   m_Layer: 0
-  m_Name: AxeWeapon
+  m_Name: Crate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,19 +44,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c24152709123a06a0bd28934f0dd64f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProjectilePrefab: {fileID: 4404663185196368188, guid: a90c9e5de84b5d451beb1c712e61fb77, type: 3}
-  ThrowablePrefab: {fileID: 4404663185196368188, guid: a90c9e5de84b5d451beb1c712e61fb77, type: 3}
+  ProjectilePrefab: {fileID: 4404663185196368188, guid: fe6f3d3daed27cc7dbdaf02486611957, type: 3}
+  ThrowablePrefab: {fileID: 4404663185196368188, guid: fe6f3d3daed27cc7dbdaf02486611957, type: 3}
   launchClip: {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
   ranged: 0
-  range: 2
+  range: 2.2
   width: 0
-  damage: 4
+  damage: 2
   force: 0
   throwDamage: 0
   throwForce: 0
   damageTime: 0
   attackTime: 0.1
-  meleeKnockback: 200
+  meleeKnockback: 300
   meleeKnockbackTime: 0.2
 --- !u!1 &4161789794310899643
 GameObject:
@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 8820190190099722284}
   - component: {fileID: 2890213535926391234}
   m_Layer: 0
-  m_Name: Axe
+  m_Name: Crate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,7 +129,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 8708d80070522a043a1ab6a2b2775382, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 68a41ff097730fb45a9b2adce184a79d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

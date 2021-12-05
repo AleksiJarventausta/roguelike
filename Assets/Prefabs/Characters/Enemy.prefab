@@ -149,7 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {fileID: 7821069075617778099, guid: 2b996b77b3ee7f43684243530ef409ec, type: 3}
   speed: 2
-  speedScaling: 0.03
+  speedScaling: 0.05
   damageRange: 1.4
   damage: 3
   damageScaling: 0.05
@@ -160,6 +160,7 @@ MonoBehaviour:
   killPoints: 400
   level: 0
   pointScaling: 0.05
+  hit: {fileID: 8300000, guid: 87e2452fe2c754248926c9a9ab93a467, type: 3}
   seeRadius: 7
   loseRadius: 12
   canMove: 1
