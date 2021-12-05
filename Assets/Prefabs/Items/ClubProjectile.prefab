@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4404663185196368195}
   - component: {fileID: 607419704285718355}
   - component: {fileID: -2843781393461756606}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ClubProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

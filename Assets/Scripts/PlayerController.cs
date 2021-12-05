@@ -7,11 +7,15 @@ public class PlayerController : MonoBehaviour
 {
 
     public float movementSpeed = 3.0f;
-    public int maxHealth = 5;
+    public float maxHealth = 5;
     public float timeInvincible = 2.0f;
 
-    public int health { get { return currentHealth; }}
-    int currentHealth;
+    public float points = 0.0f;
+    public bool isAlive= true;
+
+    public float health { get { return currentHealth; }}
+    float currentHealth;
+    GameController gc;
 
     Animator animator;
     Vector2 moveDirection = new Vector2(1,0);
@@ -26,6 +30,11 @@ public class PlayerController : MonoBehaviour
 
     WeaponController weaponController;
 
+    public void GivePoints(float point)
+    {
+        gc.SetPoints(point);
+    }
+
     public void PlaySound(AudioClip clip)
     {
         audioSource.PlayOneShot(clip);
@@ -34,17 +43,21 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gc = GameController.instance;
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         usedWeapon = Instantiate(Weapon, rigidbody2d.position, Quaternion.identity);
         weaponController = usedWeapon.GetComponent<WeaponController>();
         currentHealth = maxHealth;
+        HUDController.instance.SetHealth(1);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!isAlive)
+            return;
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
         Vector2 move = new Vector2(horizontal, vertical);
@@ -129,6 +142,23 @@ public class PlayerController : MonoBehaviour
             animator.SetTrigger("Hit");
         }
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+    }
+    public void ResetPlayer()
+    {
+        isAlive = true;
+        currentHealth = maxHealth;
+        HUDController.instance.SetHealth(1);
+    }
+
+    public void Damage(float damage)
+    {
+        currentHealth -= damage;
+        HUDController.instance.SetHealth(currentHealth / maxHealth);
+        if (currentHealth <= 0)
+        {
+            isAlive = false;
+            gc.PlayerDied();
+        }
     }
 
     public void Launch()

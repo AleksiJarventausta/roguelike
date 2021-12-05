@@ -13,27 +13,38 @@ public class EnemyAI : MonoBehaviour
     public Path path;
 
     public float speed = 2;
+    public float speedScaling;
     public float damageRange;
     public float damage;
+    public float damageScaling;
+    public float maxHealth;
+    public float maxHealthScaling;
+    private float scaledHealth;
     public float damageTime;
+    public float damagePointMultiplier;
+    public float killPoints;
     private float damageTimer = 0.0f;
-    private bool damaging;
 
-    public float nextWaypointDistance = 3;
+    public int level = 0;
+    
+    private bool damaging;
+    GameController gc;
+
+    public float pointScaling;
+    private float nextWaypointDistance = 3;
 
     private int currentWaypoint = 0;
 
-    public float repathRate = 0.5f;
+    private float repathRate = 0.5f;
     private float lastRepath = float.NegativeInfinity;
 
-    public bool reachedEndOfPath;
+    private bool reachedEndOfPath;
 
     Rigidbody2D rb;
     public float seeRadius;
     public float loseRadius;
-    public float maxHealth;
     public bool canMove = true;
-    float currentHealth;
+    private float currentHealth;
     enum EnemyState {
         IDLE,
         CHASING
@@ -45,7 +56,9 @@ public class EnemyAI : MonoBehaviour
     public void Awake() {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
-        currentHealth = maxHealth;
+        scaledHealth = maxHealth + maxHealth*maxHealthScaling*level;
+        currentHealth = scaledHealth;
+        gc = GameController.instance;
         // If you are writing a 2D game you can remove this line
         // and use the alternative way to move sugggested further below.
         controller = GetComponent<EnemyController>();
@@ -65,17 +78,47 @@ public class EnemyAI : MonoBehaviour
 
     public void Move(Vector2 direction, float speedFactor)
     {
-        rb.velocity = direction*speedFactor*speed;
+        rb.velocity = direction*(speedFactor*speed + speedFactor*speed*speedScaling*level);
     }
 
-    public void CheckDamage()
+    void OnTriggerStay2D(Collider2D other)
     {
-        float distance = Vector3.Distance(transform.position, targetPosition.position);
-        if (distance < damageRange)
+        PlayerController pc = other.GetComponent<PlayerController>();
+        if (pc != null)
         {
-            Debug.Log("damaging");
+            Debug.Log("Hitting Player");
+            if(damaging)
+            {
+                if(canMove)
+                {
+                    damageTimer += Time.fixedDeltaTime;
+                    if(damageTimer > damageTime)
+                    {
+                        pc.Damage(damage + damage*damageScaling*level);
+                        damageTimer -= damageTime;
+                    }
+                }
+            } 
+            else
+            {
+                damaging = true;
+            }
         }
+    }
+    public void ScaleToLevel(int level)
+    {
+        this.level = level;
+        scaledHealth = maxHealth + maxHealth*maxHealthScaling*level;
+    }
 
+    void OnTriggerExit2D(Collider2D other)
+    {
+        PlayerController pc = other.GetComponent<PlayerController>();
+        if (pc != null)
+        {
+            damaging = false;
+            damageTimer = 0.0f;
+        }
     }
 
     public void FixedUpdate () {
@@ -90,10 +133,6 @@ public class EnemyAI : MonoBehaviour
         } else if (enemyState == EnemyState.CHASING) {
             SeePlayer(loseRadius);
         }
-
-        CheckDamage();
-
-
 
         if (path == null || !canMove) {
             return;
@@ -130,10 +169,10 @@ public class EnemyAI : MonoBehaviour
             PlayerController controller = hit.GetComponent<PlayerController>();
             if (controller != null)
             {
-                Debug.Log("Found player");
                 if (enemyState == EnemyState.IDLE){
                     targetPosition = controller.transform;
                     enemyState = EnemyState.CHASING;
+                    Debug.Log("Found player");
                 }
                 return true;
             }
@@ -151,8 +190,11 @@ public class EnemyAI : MonoBehaviour
     {
         //TODO animation.
         currentHealth -= damage;
+        PlayerController pc = targetPosition.GetComponent<PlayerController>();
+        gc.SetPoints(damage * damagePointMultiplier + damage*damagePointMultiplier*pointScaling*level);
         if(currentHealth <= 0)
         {
+            gc.SetPoints(killPoints + killPoints*pointScaling*level);
             Destroy(gameObject);
             return;
         }
@@ -163,6 +205,7 @@ public class EnemyAI : MonoBehaviour
     {
 
         canMove = false;
+        damageTimer = 0.0f;
         Vector2 direction =  rb.position-position;
         Debug.Log(direction.normalized);
         rb.AddForce(direction.normalized*knockback);

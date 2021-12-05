@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using RogueLike.Systems;
 using Pathfinding;
 using RogueLike.Dungeons;
@@ -8,20 +9,76 @@ using Rect = RogueLike.Dungeons.Rect;
 
 public class GameController : MonoBehaviour
 {
+    public static GameController instance { get; private set; }
     DungeonGenerator mapGenerator;
+
     public GameObject spawnerPrefab;
     public GameObject player;
+    public int level = 0;
+    public float points = 0.0f;
+    public float scaleUpTime = 15.0f;
+    public float scaleUpTimer = 0.0f;
 
     List<GameObject> spawners = new List<GameObject>();
 
     // Start is called before the first frame update
+
+    public void SetPoints(float point)
+    {
+        points += point;
+        HUDController.instance.SetPoints(points);
+    }
+    void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         mapGenerator = GetComponent<DungeonGenerator>();
+        StartGame();
+    }
+
+    public void StartGame()
+    {
+        player.GetComponent<PlayerController>().ResetPlayer();
+        HUDController.instance.ShowDeathPanel(false);
         mapGenerator.seed = GlobalSettings.seed;
         mapGenerator.GenerateDungeon();
+        DestroySpawners();
         GeneratePathGrids();
+        DropPlayerToRoom();
+    }
 
+    public void StartRandomGame()
+    {
+        int seed = Random.Range(0, 1000000);
+        GlobalSettings.seed = seed;
+        Random.InitState(seed);
+        StartGame();
+    }
+
+    public void PlayerDied()
+    {
+        HUDController.instance.ShowDeathPanel(true);
+    }
+
+
+    void DropPlayerToRoom()
+    {
+        var spawner = spawners[Random.Range(0,spawners.Count -1)];
+        EnemySpawner es = spawner.GetComponent<EnemySpawner>();
+        es.DropPlayer(player);
+
+    }
+
+    void ScaleUp()
+    {
+        level++;
+        foreach (GameObject spawner in spawners)
+        {
+            EnemySpawner es = spawner.GetComponent<EnemySpawner>();
+            es.ScaleToLevel(level);
+        }
     }
 
     // Update is called once per frame
@@ -32,6 +89,16 @@ public class GameController : MonoBehaviour
             mapGenerator.GenerateDungeon();
             GeneratePathGrids();
         }
+    }
+    void FixedUpdate()
+    {
+        scaleUpTimer += Time.deltaTime;
+        if (scaleUpTimer > scaleUpTime)
+        {
+            ScaleUp();
+            scaleUpTimer -= scaleUpTime;
+        }
+
     }
 
     void DestroySpawners()

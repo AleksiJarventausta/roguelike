@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3944448205813394352}
   - component: {fileID: 3944448205813394353}
   - component: {fileID: 3944448205813394318}
+  - component: {fileID: 1280632509}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
@@ -148,15 +149,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {fileID: 7821069075617778099, guid: 2b996b77b3ee7f43684243530ef409ec, type: 3}
   speed: 2
-  damageRange: 2
-  damage: 0
-  damageTime: 0
-  nextWaypointDistance: 3
-  repathRate: 0.5
-  reachedEndOfPath: 0
-  seeRadius: 3
-  loseRadius: 10
+  speedScaling: 0.03
+  damageRange: 1.4
+  damage: 3
+  damageScaling: 0.05
   maxHealth: 10
+  maxHealthScaling: 0.05
+  damageTime: 0.5
+  damagePointMultiplier: 10
+  killPoints: 400
+  level: 0
+  pointScaling: 0.05
+  seeRadius: 7
+  loseRadius: 12
   canMove: 1
 --- !u!61 &3944448205813394353
 BoxCollider2D:
@@ -205,3 +210,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &1280632509
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3944448205813394361}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.03026998, y: 0.4536718}
+  serializedVersion: 2
+  m_Radius: 0.64963114
